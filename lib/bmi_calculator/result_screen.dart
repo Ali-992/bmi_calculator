@@ -6,8 +6,21 @@ class ResultScreen extends StatelessWidget {
   final String result;
   final int weight;
   final bool isMale;
+  final String idealMenBodyResult;
+  final String idealWomenBodyResult;
+  final String differenceMan;
+  final String differenceWoman;
 
-  const ResultScreen({Key key, this.age, this.result, this.weight, this.isMale}) : super(key: key);
+
+  const ResultScreen({Key key,
+    this.age,
+    this.result,
+    this.weight,
+    this.isMale,
+    this.idealMenBodyResult,
+    this.idealWomenBodyResult,
+    this.differenceMan,
+    this.differenceWoman}) : super(key: key);
 
 
 
@@ -55,6 +68,24 @@ class ResultScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text('Ideal body weight: ${isMale? idealMenBodyResult : idealWomenBodyResult } KG',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),),
+            SizedBox(
+             height: 20.0,
+            ),
+            Text('Difference: ${isMale? differenceMan : differenceWoman} KG',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),),
             SizedBox(
               height: 20.0,
             ),

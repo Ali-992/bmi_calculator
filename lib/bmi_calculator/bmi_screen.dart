@@ -282,6 +282,11 @@ class _BmiScreenState extends State<BmiScreen> {
               onPressed: (){
 
                 var result = weight / pow(height / 100, 2);
+                var idealMenBodyResult = (height - 152.4) * 0.91 + 50;
+                var idealWomenBodyResult = (height - 152.4) * 0.91 + 45.5;
+                var differenceMan = weight - idealMenBodyResult ;
+                var differenceWomen = weight - idealWomenBodyResult ;
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => ResultScreen(
@@ -289,6 +294,11 @@ class _BmiScreenState extends State<BmiScreen> {
                     isMale: isMale,
                     result: result.toStringAsFixed(1),
                     weight: weight,
+                    idealMenBodyResult: idealMenBodyResult.toStringAsFixed(1),
+                    idealWomenBodyResult: idealWomenBodyResult.toStringAsFixed(1),
+                    differenceMan: differenceMan.toStringAsFixed(1),
+                    differenceWoman: differenceWomen.toStringAsFixed(1),
+
                   )),
                 );
               },
